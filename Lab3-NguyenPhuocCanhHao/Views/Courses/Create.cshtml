@@ -1,0 +1,49 @@
+﻿@model Lab3_NguyenPhuocCanhHao.Views.ViewModels.CourseViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+<from>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Place)
+        @Html.TextBoxFor(m => m.Place, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Time)
+        @Html.TextBoxFor(m => m.Time, new { @class = "from-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Category)
+        @Html.DropDownListFor(m => m.Category, new SelectList(Model.Categories, "Id", "Name"), "", new { @class = "form-control"})
+    </div>
+    <div class="form-group"></div>
+    <div class="form-group"></div>
+    <div class="form-group"></div>
+
+    <!-- Xây dựng form với Bootstrap -->
+    @*<div class="form-group">
+        <label for="place">Place</label>
+        <input type="text" class="form-control" name="place" id="place" placeholder="k26 Apartment, Ward 7, Go Vap District" />
+        <br />
+        <label for="Date">Date</label>
+        <input type="date" class="form-control" name="date" id="date" />
+        <br />
+        <label for="time">Time</label>
+        <input type="time" class="form-control" name="time" id="time" />
+        <br />
+        <label for="Category">Category</label>
+        <select class="form-control" name="Category" id="Category">
+            <option></option>
+            <option>Development</option>
+            <option>Business</option>
+            <option>Marketing</option>
+        </select>
+    </div>*@
+</from>
+

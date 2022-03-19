@@ -10,11 +10,9 @@ namespace Lab3_NguyenPhuocCanhHao.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Course> Courses
-        {
-            get { return Courses; }
-            set { Courses = value; }
-        }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
