@@ -1,5 +1,6 @@
 ﻿using Lab3_NguyenPhuocCanhHao.Models;
 using Lab3_NguyenPhuocCanhHao.Views.ViewModels;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Lab3_NguyenPhuocCanhHao.Controllers
 {
+
     public class CoursesController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
@@ -16,6 +18,7 @@ namespace Lab3_NguyenPhuocCanhHao.Controllers
             _dbContext = new ApplicationDbContext();
         }
         // GET: Courses
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel
@@ -23,6 +26,22 @@ namespace Lab3_NguyenPhuocCanhHao.Controllers
                 Categories = _dbContext.Categories.ToList()
             };
             return View(viewModel);
+        }
+        [Authorize]
+        [HttpPost]
+        public ActionResult Create(CourseViewModel viewModel)
+        {
+            var course = new Course
+            {
+                LecturerId = User.Identity.GetUserId(),
+                DateTime = viewModel.GetDateTime(),
+                CategoryId = viewModel.Category,
+                Place = viewModel.Place
+            };
+            _dbContext.Courses.Add(course);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

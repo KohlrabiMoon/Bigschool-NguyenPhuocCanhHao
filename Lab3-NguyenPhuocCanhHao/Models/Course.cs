@@ -20,29 +20,11 @@ namespace Lab3_NguyenPhuocCanhHao.Models
             set { Lecturer = value; }
         }
 
-        public string LecturerId
-        {
-            get { return LecturerId; }
-            set { LecturerId = value; }
-        }
+        public string LecturerId { get; set; }
         [StringLength(255)]
-        public string Place
-        {
-            get { return Place; }
-            set { Place = value; }
-        }
-
-        public DateTime DateTime
-        {
-            get { return DateTime; }
-            set { DateTime = value; }
-        }
-
-        public Category Category
-        {
-            get { return Category; }
-            set { Category = value; }
-        }
+        public string Place { get; set; }
+        public DateTime DateTime { get; set; }
+        public Category Category { get; set; }
         [Required]
 
         public byte CategoryId
