@@ -220,3 +220,5 @@ C:\Users\ASUS\Desktop\TH-Wed\Bigschool-NguyenPhuocCanhHao\Lab3-NguyenPhuocCanhHa
 C:\Users\ASUS\Desktop\TH-Wed\Bigschool-NguyenPhuocCanhHao\Lab3-NguyenPhuocCanhHao\obj\Debug\Lab3-NguyenPhuocCanhHao.pdb
 C:\Users\ASUS\Desktop\TH-Wed\Bigschool-NguyenPhuocCanhHao\Lab3-NguyenPhuocCanhHao\obj\Debug\Lab3_NguyenPhuocCanhHao.Migrations.CreateTableCourse.resources
 C:\Users\ASUS\Desktop\TH-Wed\Bigschool-NguyenPhuocCanhHao\Lab3-NguyenPhuocCanhHao\obj\Debug\Lab3_NguyenPhuocCanhHao.Migrations.PopulateCategoryTable.resources
+C:\Users\ASUS\Desktop\TH-Wed\Bigschool-NguyenPhuocCanhHao\Lab3-NguyenPhuocCanhHao\obj\Debug\Lab3_NguyenPhuocCanhHao.Migrations.AddNameColumnToApplicationUser.resources
+C:\Users\ASUS\Desktop\TH-Wed\Bigschool-NguyenPhuocCanhHao\Lab3-NguyenPhuocCanhHao\obj\Debug\Lab3_NguyenPhuocCanhHao.Migrations.AddAttendance.resources
