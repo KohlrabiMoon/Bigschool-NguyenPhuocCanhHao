@@ -1,9 +1,9 @@
-﻿@model IEnumerable<Lab3_NguyenPhuocCanhHao.Models.Course>
+﻿@model Lab3_NguyenPhuocCanhHao.Views.ViewModels.CourseViewModel
 @{
     ViewBag.Title = "Home Page";
 }
 <div class="row">
-    <ul>
+ @*   <ul>
         @foreach (var course in Model)
         {
             <li>
@@ -12,10 +12,10 @@
 
         }
 
-    </ul>
+    </ul>*@
 
     <ul class="course">
-        @foreach (var course in Model)
+        @foreach (var course in Model.UpcommingCourses)
         {
             <li>
                 <div class="date">
@@ -29,14 +29,49 @@
                 <div class="details">
                     <span class="lecturer">
                         @course.Lecturer.Name
+                        @if (Model.ShowAction)
+                        {
+                        <button class="btn btn-link btn-sm js-toggle-attendance"></button>
+                        }
                     </span>
                     <span class="category">
                         @course.Category.Name
                     </span>
+                    @if (Model.)
+                    <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
                 </div>
             </li>
         }
     </ul>
+    @section scripts
+    {
+        <script>
+            $(document).ready(function () {
+                $(".js-toggel-attendance").click(function (e) {
+                    var button = $(e.target);
+                    $.post("/api/attendances", { courseID: button.attr("data-course-id") })
+                        .done(function () {
+                            button
+                                .removeClass("btn-default")
+                                .addClass("btn-info")
+                                .text("Going");
+                        })
+                        .fail(function () {
+                            alert("Something failed!");
+                        });
+                });
+                $(".js-toggel-follow").click(function (e) {
+                    var button = $(e.target);
+                    $.post("api/followings", { followeeId: button.attr("data-user-id") }).done(function () {
+                        button.text("Following");
+                    })
+                    .fail(function(){
+                        alert("Something failed");
+                    });
+                });
+            });
+        </script>    
+    }
 </div>
 
 <div class="jumbotron">

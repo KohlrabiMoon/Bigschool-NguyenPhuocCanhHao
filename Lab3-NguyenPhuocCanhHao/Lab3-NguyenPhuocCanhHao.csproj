@@ -45,16 +45,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Hangfire.Core, Version=1.7.28.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.7.28\lib\net46\Hangfire.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -192,9 +204,13 @@
     <Compile Include="Migrations\202203261138219_AddNameColumnToApplicationUser.Designer.cs">
       <DependentUpon>202203261138219_AddNameColumnToApplicationUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203261452496_AddAttendance.cs" />
-    <Compile Include="Migrations\202203261452496_AddAttendance.Designer.cs">
-      <DependentUpon>202203261452496_AddAttendance.cs</DependentUpon>
+    <Compile Include="Migrations\202204030813506_Attendance.cs" />
+    <Compile Include="Migrations\202204030813506_Attendance.Designer.cs">
+      <DependentUpon>202204030813506_Attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204031041108_AddAttendance.cs" />
+    <Compile Include="Migrations\202204031041108_AddAttendance.Designer.cs">
+      <DependentUpon>202204031041108_AddAttendance.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -206,6 +222,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\ViewModels\CoursesViewModel.cs" />
     <Compile Include="Views\ViewModels\CourseViewModel.cs" />
     <Compile Include="Views\ViewModels\FutureDate.cs" />
     <Compile Include="Views\ViewModels\ValidTime.cs" />
@@ -297,8 +314,11 @@
     <EmbeddedResource Include="Migrations\202203261138219_AddNameColumnToApplicationUser.resx">
       <DependentUpon>202203261138219_AddNameColumnToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203261452496_AddAttendance.resx">
-      <DependentUpon>202203261452496_AddAttendance.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202204030813506_Attendance.resx">
+      <DependentUpon>202204030813506_Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204031041108_AddAttendance.resx">
+      <DependentUpon>202204031041108_AddAttendance.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

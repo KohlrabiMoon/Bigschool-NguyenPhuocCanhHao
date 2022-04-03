@@ -7,13 +7,13 @@ namespace Lab3_NguyenPhuocCanhHao.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddAttendance : IMigrationMetadata
+    public sealed partial class Attendance : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddAttendance));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Attendance));
         
         string IMigrationMetadata.Id
         {
-            get { return "202203261452496_AddAttendance"; }
+            get { return "202204030813506_Attendance"; }
         }
         
         string IMigrationMetadata.Source

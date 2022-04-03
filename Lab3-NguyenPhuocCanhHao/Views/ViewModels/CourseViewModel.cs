@@ -17,6 +17,7 @@ namespace Lab3_NguyenPhuocCanhHao.Views.ViewModels
         [Required]
         [ValidTime]
         public string Time { get; set; }
+        [Required]
         public byte Category { get; set; }
         public IEnumerable<Category> Categories { get; set; }
         public DateTime GetDateTime()
@@ -24,4 +25,6 @@ namespace Lab3_NguyenPhuocCanhHao.Views.ViewModels
             return DateTime.Parse(string.Format("{0} {1}", Date, Time));
         }
     }
+
+    
 }
